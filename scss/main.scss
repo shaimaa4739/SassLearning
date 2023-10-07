@@ -1,0 +1,31 @@
+@import './variables';
+body{
+    background-color: $primary-color;
+}
+
+.main{
+    width: 80%;
+    margin: auto;
+
+    // means we want .main
+    // & means the parent or name of element, id or class that before {} 
+    // if we want it's every class parent so we use interpolation
+    //  #{&}_header
+    &_header{
+        background-color: $light-color;
+        padding: 25px;
+        p{
+            color: $primary-color;
+            font-size: 18px;
+            font-weight: map-get($map: $font-weights-map, $key: bold);
+            &:hover{
+                color: $error-color;
+            }
+        }
+        &:hover{
+            color: $succes-color;
+            font-weight: map-get($map: $font-weights-map, $key: bold);
+        }
+    }
+
+}

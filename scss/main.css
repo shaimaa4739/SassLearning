@@ -1,0 +1,24 @@
+body {
+  background-color: #272727;
+}
+
+.main {
+  width: 80%;
+  margin: auto;
+}
+.main_header {
+  background-color: #f7f7f7;
+  padding: 25px;
+}
+.main_header p {
+  color: #272727;
+  font-size: 18px;
+  font-weight: 700;
+}
+.main_header p:hover {
+  color: rgb(165, 54, 54);
+}
+.main_header:hover {
+  color: rgb(47, 139, 85);
+  font-weight: 700;
+}/*# sourceMappingURL=main.css.map */
