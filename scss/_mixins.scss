@@ -1,0 +1,32 @@
+@mixin theme ($background-color,$font-color){
+    background-color: $background-color;
+    color: $font-color;
+}
+
+@mixin isLightOrDark ($theme-light: true){
+    @if ($theme-light){
+        background-color: $light-color;
+        color: $primary-color;
+    } @else {
+        background-color: $primary-color ;
+        color: $light-color ;
+    }
+}
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexCenterAndDirection ($direction) {
+    @include flexCenter();
+    flex-direction: $direction ;
+
+}
+
+@mixin mobile($mobile){
+    @media (max-width: $mobile) {
+        @content;
+    }
+}

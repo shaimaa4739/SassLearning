@@ -1,23 +1,35 @@
 @import './variables';
+@import './functions';
+@import './mixins';
+
+
 body{
     background-color: $primary-color;
+    color: $light-color;
+    // @include theme ($error-color, $succes-color);
 }
 
 .main{
     width: 80%;
     margin: auto;
 
+    // mixins used to define style
+    @include flexCenterAndDirection(column);
+    
     // means we want .main
     // & means the parent or name of element, id or class that before {} 
     // if we want it's every class parent so we use interpolation
     //  #{&}_header
     &_header{
-        background-color: $light-color;
+        // @include flexCenter ;
+        // background-color: $primary-color;
+        // color: $light-color;
         padding: 25px;
         p{
-            color: $primary-color;
             font-size: 18px;
-            font-weight: map-get($map: $font-weights-map, $key: bold);
+            // functions used to return values to build the style 
+            // we can use function inside mixin
+            font-weight: fontWeight(bold);
             &:hover{
                 color: $error-color;
             }
@@ -26,6 +38,20 @@ body{
             color: $succes-color;
             font-weight: map-get($map: $font-weights-map, $key: bold);
         }
+        &__content{
+            @include flexCenterAndDirection (column);
+            color: $error-color;
+            @include mobile ($mobile){
+                @include flexCenterAndDirection(row);
+            }
+        }
     }
+}
 
+.light{
+    @include isLightOrDark();
+}
+
+.dark{
+    @include isLightOrDark(false);
 }

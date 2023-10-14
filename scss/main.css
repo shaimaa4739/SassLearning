@@ -1,17 +1,20 @@
 body {
   background-color: #272727;
+  color: #f7f7f7;
 }
 
 .main {
   width: 80%;
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .main_header {
-  background-color: #f7f7f7;
   padding: 25px;
 }
 .main_header p {
-  color: #272727;
   font-size: 18px;
   font-weight: 700;
 }
@@ -21,4 +24,29 @@ body {
 .main_header:hover {
   color: rgb(47, 139, 85);
   font-weight: 700;
+}
+.main_header__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(165, 54, 54);
+}
+@media (max-width: 800px) {
+  .main_header__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+.light {
+  background-color: #f7f7f7;
+  color: #272727;
+}
+
+.dark {
+  background-color: #272727;
+  color: #f7f7f7;
 }/*# sourceMappingURL=main.css.map */
